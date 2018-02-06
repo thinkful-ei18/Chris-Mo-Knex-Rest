@@ -60,14 +60,55 @@ process.stdout.write('\x1Bc');
 //   .then(consoleLog);
 
 // Number 7
-knex
-  .select('id', 'name')
-  .from('restaurants')
-  .whereIn('address_zipcode', [10012, 10013, 10014])
-  .orderBy('name', 'asc')
-  .limit(5)
-  .then(consoleLog);
-  
+// knex
+//   .select('id', 'name')
+//   .from('restaurants')
+//   .whereIn('address_zipcode', [10012, 10013, 10014])
+//   .orderBy('name', 'asc')
+//   .limit(5)
+//   .then(consoleLog);
+
+//Number 8
+// knex('restaurants')
+//   .insert({name: 'Byte Cafe', borough: 'Brooklyn', 
+//   cuisine:'coffee', 
+//   address_building_number: '123',
+//   address_street: 'Atlantic Avenue',
+//   address_zipcode: '11231'})
+//   .returning(['id', 'name', 'borough'])
+//   .then(console.log);
+
+//Number 9
+// knex('restaurants')
+//   .insert({name: 'Pizza Hut', borough: 'Brooklyn', 
+//   cuisine:'Pizza', 
+//   address_building_number: '123',
+//   address_street: 'Atlantic Avenue',
+//   address_zipcode: '11231'})
+//   .returning(['id', 'name'])
+//   .then(console.log);
+
+//Number 11
+// knex('restaurants')
+//   .update('name', 'DJ Reynolds Pub and Restaurant')
+//   .where('nyc_restaurant_id', '30191841')
+//   .then(console.log);
+// knex('restaurants')
+// .select()
+// .where('nyc_restaurant_id', '30191841')
+// .then(console.log);
+
+// //Number 12
+// knex('grades')
+//   .where('id', '10')
+//   .del()
+//   .then(console.log);
+
+//Number 13
+knex('restaurant')
+  .where('id', '22')
+  .del()
+  .then(console.log);
 
 // Destroy the connection pool
 knex.destroy().then(() => {
